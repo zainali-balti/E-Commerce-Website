@@ -1,0 +1,58 @@
+.bootstrap-wrapper {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    font-weight: bold;
+}
+
+.field input, .field textarea {
+    width: 100%; /* Full width for inputs and textareas */
+    padding: 10px; /* Padding for comfort */
+    border: 1px solid #ced4da; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.field textarea {
+    height: 100px; /* Fixed height for textarea */
+    resize: none; /* Disable resizing */
+}
+
+/* Button styles */
+.btn {
+    width: 150px; /* Fixed width for buttons */
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .btn {
+        margin-bottom: 10px; /* Add some space between buttons on small screens */
+        max-width: 100%; /* Full width for buttons */
+    }
+
+    .d-flex {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+    }
+}
+
+/* Additional media query for very small screens */
+@media (max-width: 336px) {
+    .btn {
+        margin-bottom: 10px; /* Space below buttons */
+        max-width: 100%; /* Full width for buttons */
+        flex: 1; /* Allow buttons to grow equally */
+    }
+
+    .d-flex {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+    .field input, .field textarea {
+        font-size: 10px
+    }
+}

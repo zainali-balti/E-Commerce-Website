@@ -1,0 +1,50 @@
+.bootstrap-wrapper {
+    padding: 50px 0;
+/* Centers the image horizontally */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    height: 50px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto; /* Centers the image horizontally */
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    cursor: pointer;
+    color: black;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .col-sm-10, .col-md-8, .col-lg-4 {
+        width: 100%;
+        padding: 0;
+    }
+    .form-group input {
+       font-size: 14px;
+    }
+}

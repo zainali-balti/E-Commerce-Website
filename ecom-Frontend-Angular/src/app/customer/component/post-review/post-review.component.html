@@ -1,0 +1,53 @@
+<div class="bootstrap-wrapper" style="margin-top: 50px;">
+    <div class="container">
+        <div class="text-center">
+            <h3 class="mb-4">Add Review</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+                <div *ngIf="successMessage" class="alert alert-success">
+                    {{ successMessage }}
+                </div>
+                <div *ngIf="errorMessage" class="alert alert-danger">
+                    {{ errorMessage }}
+                </div>
+  
+                <div class="image-upload-container text-center mb-4">
+                    <input type="file" (change)="onFileSelected($event)" accept="image/*" style="display: none;" id="fileInput" />
+                    <label for="fileInput" class="btn btn-outline-primary">Upload Image</label>
+                    <div *ngIf="imagePreview" class="image-preview-container">
+                        <img [src]="imagePreview" alt="Image Preview" class="circular-image" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea [(ngModel)]="reviewDto.description" class="form-control" name="description" placeholder="Enter a description here" required></textarea>
+                    <div *ngIf="!reviewDto.description">
+                        <p>Please Give The Rating</p>
+                      </div>
+                </div>
+                <div class="form-group mb-4">
+                    <label for="ratingSelect">Select Rating</label>
+                    <select id="ratingSelect" class="form-select" [(ngModel)]="reviewDto.rating" aria-label="Select Category" required>
+                        <option value="" disabled selected>Select a Rating</option>
+                        <option  [value]="1">1 Star</option>
+                        <option  [value]="2">2 Star</option>
+                        <option  [value]="3">3 Star</option>
+                        <option  [value]="4">4 Star</option>
+                        <option  [value]="5">5 Star</option>
+                    </select>
+                    <div *ngIf="!reviewDto.rating">
+                        <p>Please Give The Rating</p>
+                      </div>
+                </div>
+                <div class="d-flex justify-content-between flex-wrap">
+                    <button type="button" class="btn btn-primary" (click)="giveMyReview()">Add Review</button>
+                    <button type="button" class="btn btn-danger" (click)="resetForm()">Clear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  
+

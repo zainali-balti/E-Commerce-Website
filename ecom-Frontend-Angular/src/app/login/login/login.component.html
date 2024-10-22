@@ -1,0 +1,25 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-8 col-sm-10" style="margin: auto;">
+                <img src="images/login.jfif" alt="" class="img-fluid">
+                <form>
+                    <div class="form-group position-relative">
+                        <label>Email</label>
+                        <input [(ngModel)]="signupRequest.email" type="email" class="form-control" placeholder="Enter the email of the User" name="email" required />
+                    </div>
+                    <div class="form-group position-relative">
+                        <label>Password</label>
+                        <input [(ngModel)]="signupRequest.password" [type]="isPasswordVisible ? 'text' : 'password'" class="form-control" placeholder="Enter the password of the User" name="password" required />
+                        <i class="eye-icon" (click)="togglePassword()" style="position: absolute; right: 10px; top: 70%; transform: translateY(-50%); color: black; cursor: pointer;">
+                            {{ isPasswordVisible ? '🙈' : '👁️' }}
+                        </i>
+                    </div>
+                    <div class="button">
+                        <button type="button" class="btn btn-primary btn-block" (click)="submit()">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

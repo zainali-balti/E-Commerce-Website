@@ -1,0 +1,20 @@
+<table class="table" >
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Code</th>
+        <th scope="col">ExpirationDate</th>
+        <th scope="col">Discount</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let cop of coupon">
+      <tr>
+        <th scope="row">{{cop.id}}</th>
+        <td>{{cop.name}}</td>
+        <td>{{cop.code}}</td>
+        <td>{{cop.expirationDate}}</td>
+        <td>{{cop.discount}}</td>
+      </tr>
+    </tbody>
+  </table>

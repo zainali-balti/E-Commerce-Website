@@ -1,0 +1,50 @@
+/* Fade-in animation for table rows */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .table tbody tr {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Add a slight hover effect for a better UX */
+  .table tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Light blue hover */
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    table thead th:nth-child(3),
+    table thead th:nth-child(4),
+    table thead th:nth-child(5),
+    table thead th:nth-child(8),
+    table thead th:nth-child(9),
+    table tbody td:nth-child(3),
+    table tbody td:nth-child(4),
+    table tbody td:nth-child(5),
+    table tbody td:nth-child(8),
+    table tbody td:nth-child(9) {
+      display: none;
+    }
+    
+    table thead th, table tbody td {
+      padding: 0.5rem;
+      font-size: 0.85rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    table thead th, table tbody td {
+      font-size: 0.75rem;
+      padding: 0.25rem;
+    }
+  }
+  

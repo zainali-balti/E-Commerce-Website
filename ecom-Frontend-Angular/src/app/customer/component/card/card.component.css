@@ -1,0 +1,29 @@
+.card-img-left {
+    height: 100px;
+    width: 200px;
+    object-fit: cover;
+  }
+  
+  /* For larger screens, flex row layout */
+  .card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  /* For very small screens, make buttons full width */
+  @media (max-width: 400px) {
+    .btn {
+      width: 100%;
+      margin-top: 5px;
+    }
+    .card {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .card-img-left {
+        width: 100%;
+        height: auto;
+      }
+  }
+  

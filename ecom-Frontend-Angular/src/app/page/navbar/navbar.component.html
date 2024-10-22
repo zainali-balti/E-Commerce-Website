@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">E-Commerce</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['login']">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['signup']">SignUp</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['tracking']">Tracking Orders</a>
+        </li>
+      </ul>
+  </div>
+  </div>
+  </nav>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="isAdminLoggedIn">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">E-Commerce</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/admin/dashboard']">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/admin/add-coupon']">Post Coupon</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/admin/coupon']">Coupons List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/admin/category']">Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/admin/product']">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/admin/order']">Orders List</a>
+          </li>
+        </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['signup']" (click)="logOut()">LogOut</a>
+        </li>
+      </ul>
+  </div>
+  </div>
+  </nav>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="isCustomerLoggedIn">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">E-Commerce</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/customer/customer-dashboard']">Products List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/customer/my-order']">Order Details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/customer/wish']">WishList</a>
+          </li>
+        </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['signup']" (click)="logOut()">LogOut</a>
+        </li>
+      </ul>
+  </div>
+  </div>
+  </nav>

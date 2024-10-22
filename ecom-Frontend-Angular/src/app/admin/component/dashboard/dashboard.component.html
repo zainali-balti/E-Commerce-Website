@@ -1,0 +1,35 @@
+<div class="bootstrap-wrapper mt-4">
+    <div class="container">
+        <div class="row">
+             <!-- Search Form -->
+             <form class="d-flex justify-content-center mb-3" (ngSubmit)="search()">
+                <input [(ngModel)]="searchTerm" [ngModelOptions]="{standalone: true}" class="form-control me-2" style="width: 40%;" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+      <!-- Show message if no products are found -->
+      <div *ngIf="products.length === 0" class="text-center">
+        <p>No products found with the name "{{ searchTerm }}"</p>
+      </div>
+            <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let pro of products"> 
+                
+                <div class="card mb-4">
+                    <img *ngIf="pro.img" [src]="'data:image/jpeg;base64,' + pro.img" class="card-img-top img-fluid" alt="Product Image" style="object-fit: cover; height: 200px;" /> 
+                    <div class="card-body">
+                        <div class="headings" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                            <p>ProductName: <b>{{ pro.name }}</b></p>
+                            <p>categoryName: <b>{{ pro.categoryName }}</b></p>
+                        </div>
+                        <p class="card-text">Description: <b>{{ pro.description }}</b></p>
+                        <p class="card-text"><small class="text-muted"><b>Price:</b><b> {{ pro.price | currency  }}</b></small></p>
+                        <div class="buttons" style="display: flex; justify-content: space-between; flex-wrap: wrap;  padding-top: 20px; padding-bottom: 20px; width: 100%; padding-left: 20px; padding-right: 20px;">
+                            <button type="button" class="btn btn-primary mt-2" [routerLink]="['/admin/faq',pro.id]">FAQs</button>
+                            <button type="button" class="btn btn-secondary mt-2" [routerLink]="['/admin/update',pro.id]">Update</button>
+                            <button type="button" class="btn btn-danger mt-2" (click)="deleteById(pro.id)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

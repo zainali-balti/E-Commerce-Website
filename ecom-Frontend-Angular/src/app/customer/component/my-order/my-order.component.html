@@ -1,0 +1,31 @@
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Total Amount</th>
+          <th scope="col">Order Status</th>
+          <th scope="col">Tracking ID</th>
+          <th scope="col">Address</th>
+          <th scope="col">Date</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let order of orderDto">
+        <tr>
+          <th scope="row">{{ order.id }}</th>
+          <td>{{ order.userName }}</td>
+          <td>{{ order.totalAmount }}</td>
+          <td>{{ order.orderStatus }}</td>
+          <td>{{ order.trackingId }}</td>
+          <td>{{ order.address }}</td>
+          <td>{{ order.date }}</td>
+          <td><div class="button" *ngIf="order.orderStatus == 'Shipped'">
+            <button type="button" class="btn btn-primary" [routerLink]="['/customer/review',order.id]">Review</button>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,17 @@
+.bootstrap-wrapper {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+@media (max-width: 767px) {
+    input{
+        width: 80% !important;
+    }
+
+}
+@media (max-width: 400px) {
+    button{
+        width: 100% !important;
+    }
+
+}

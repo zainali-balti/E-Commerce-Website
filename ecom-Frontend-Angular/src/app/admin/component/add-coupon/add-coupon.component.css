@@ -1,0 +1,52 @@
+.bootstrap-wrapper {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.image-upload-container {
+    position: relative;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.image-preview-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circular-image {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    border-radius: 50%;
+    object-fit: cover; /* Crop the image to fit */
+    border: 2px solid #007bff; /* Optional: Add a border */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn-outline-primary {
+    width: 150px; 
+}
+.btn {
+    flex: 1; 
+    margin: 0 10px; 
+}
+@media (max-width: 350px) {
+    .btn {
+        margin-bottom: 10px; 
+        max-width: 100%;
+        flex: 1;
+    }
+
+    .d-flex {
+        flex-direction: column; 
+    }
+}

@@ -1,0 +1,43 @@
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Total Amount</th>
+          <th scope="col">Discount</th>
+          <th scope="col">Order Status</th>
+          <th scope="col">Tracking ID</th>
+          <th scope="col">Address</th>
+          <th scope="col">Coupon Name</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let order of orderDto">
+        <tr>
+          <th scope="row">{{ order.id }}</th>
+          <td>{{ order.name }}</td>
+          <td>{{ order.amount }}</td>
+          <td>{{ order.totalAmount }}</td>
+          <td>{{ order.discount }}</td>
+          <td>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ order.orderStatus }}
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#" (click)="chageOrderStatus(order.id,'Shipped')">Shipped</a></li>
+                <li><a class="dropdown-item" href="#" (click)="chageOrderStatus(order.id,'Delivered')">Delivered</a></li>
+              </ul>
+            </div>
+          </td>
+          <td>{{ order.trackingId }}</td>
+          <td>{{ order.address }}</td>
+          <td>{{ order.couponName }}</td>
+          <td>{{ order.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

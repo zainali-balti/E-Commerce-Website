@@ -1,0 +1,28 @@
+/* .bootstrap-wrapper {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn-outline-primary {
+    width: 150px; 
+}
+.btn {
+    flex: 1; 
+    margin: 0 10px; 
+}
+@media (max-width: 350px) {
+    .btn {
+        margin-bottom: 10px; 
+        max-width: 100%;
+        flex: 1;
+    }
+
+    .d-flex {
+        flex-direction: column; 
+    }
+} */
